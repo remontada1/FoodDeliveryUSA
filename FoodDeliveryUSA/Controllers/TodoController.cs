@@ -7,7 +7,7 @@ namespace FoodDeliveryUSA.Controllers
     {
         public IActionResult GetFood()
         {
-            return Content("App created");
+            return Content("App created!");
         }
     }
 }

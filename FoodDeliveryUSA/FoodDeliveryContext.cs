@@ -1,7 +1,5 @@
-﻿using System;
-using FoodDeliveryUSA.Models;
+﻿using FoodDeliveryUSA.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace FoodDeliveryUSA
 {
@@ -16,7 +14,7 @@ namespace FoodDeliveryUSA
         {
         }
 
-        public DbSet<Customer> Customers { get; set; }
+        public  DbSet<Customer> Customers { get; set; }
         
     }
 }

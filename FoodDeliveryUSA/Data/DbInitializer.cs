@@ -14,7 +14,7 @@ namespace FoodDeliveryUSA.Data
                 return;
             }
 
-            var customers = new Customer[]
+            var customers = new []
             {
             new Customer{FirstName = "Artur", LastName = "Bilzaryan", Email = "ArBil@gmail.com", PhoneNumber = "+170070000"}
             };

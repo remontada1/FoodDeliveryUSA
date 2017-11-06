@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using FoodDeliveryUSA.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +18,7 @@ namespace FoodDeliveryUSA.Controllers
             this.context = context;
         }
 
+        [HttpGet]
         public IEnumerable<Customer> GetFood()
         {
             return context.Customers.ToList();

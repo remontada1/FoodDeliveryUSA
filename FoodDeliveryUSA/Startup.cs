@@ -21,6 +21,7 @@ namespace FoodDeliveryUSA
             services.AddMvc();
             services.AddDbContext<FoodDeliveryContext>(options =>
                 options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Integrated Security=true;"));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

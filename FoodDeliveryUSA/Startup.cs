@@ -19,7 +19,7 @@ namespace FoodDeliveryUSA
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<FoodDeliveryContext>(options =>
-                options.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Integrated Security=true;"));
+                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=FoodDb;Trusted_Connection=True;"));
             services.AddMvc();
         }
 

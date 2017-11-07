@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
 using FoodDeliveryUSA.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace FoodDeliveryUSA.Controllers
 {
@@ -19,9 +16,21 @@ namespace FoodDeliveryUSA.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Customer> GetFood()
+        public IEnumerable<Customer> GetCustomers()
         {
             return context.Customers.ToList();
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var customer = context.Customers.FirstOrDefault(i => i.Id == id);
+            if (customer == null)
+            {
+                return NotFound("Customer not found");
+            }
+            return new ObjectResult(customer);
+        }
+        
     }
 }

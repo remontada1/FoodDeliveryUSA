@@ -12,6 +12,7 @@ namespace FoodDeliveryUSA.Controllers
 
         public CustomerController(FoodDeliveryContext context)
         {
+            
             this.context = context;
         }
 
@@ -31,6 +32,18 @@ namespace FoodDeliveryUSA.Controllers
             }
             return new ObjectResult(customer);
         }
-        
+        [HttpPost]
+        public IActionResult AddCustomer([FromBody]Customer customer)
+        {
+            if (customer == null)
+            {
+                return BadRequest();
+            }
+
+            context.Customers.Add(customer);
+            context.SaveChanges();
+
+            return Ok("Customer created");
+        }
     }
 }
